@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<Pane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.heiznekuehlen.HeizKuehlController">
+
+    <!-- Anzeigen oben links: Temperatur, Lampe, Ventilator, Grenzen -->
+    <VBox layoutX="12.0" layoutY="8.0">
+        <Label fx:id="temp_label" text="---"><font><Font size="26.0"/></font></Label>
+        <Label fx:id="lampe_label" text="aus"><font><Font size="26.0"/></font></Label>
+        <Label fx:id="ventilator_label" text="aus"><font><Font size="26.0"/></font></Label>
+        <Label fx:id="og_label" text="Obergrenze :"><font><Font size="26.0"/></font></Label>
+        <Label fx:id="ug_label" text="Untergrenze : "><font><Font size="26.0"/></font></Label>
+    </VBox>
+
+    <Circle fx:id="lampe_kreis" centerX="72.0" centerY="328.0" radius="58.0" fill="WHITE" stroke="BLACK"/>
+    <Label layoutX="158.0" layoutY="296.0" text="Lampe"/>
+
+    <Label layoutX="306.0" layoutY="296.0" text="Ventilator"/>
+    <Circle fx:id="ventilator_kreis" centerX="520.0" centerY="328.0" radius="58.0" fill="WHITE" stroke="BLACK"/>
+
+    <!-- nur sichtbar, wenn der Server nicht antwortet -->
+    <Label fx:id="fehler_label" layoutX="140.0" layoutY="350.0" prefWidth="320.0" wrapText="true" textFill="RED"/>
+</Pane>
